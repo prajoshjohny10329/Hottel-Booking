@@ -1,6 +1,6 @@
 // src/app/page.tsx
 import React from 'react';
-import LandingPage from './components/components';
+import LandingPage from './components/LandingPage';
 
 const HomePage: React.FC = () => {
   return (

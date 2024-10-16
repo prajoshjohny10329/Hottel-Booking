@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './HeroSlider.module.css'; // Import your custom CSS module
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 interface Slide {
   id: number;
@@ -91,8 +93,12 @@ const HeroSlider: React.FC = () => {
         ))}
       </div>
 
-      <button className={styles.prevButton} onClick={goToPrevious}>Prev</button>
-      <button className={styles.nextButton} onClick={goToNext}>Next</button>
+      <button className={styles.prevButton} onClick={goToPrevious}>
+        <FontAwesomeIcon icon={faChevronLeft} />
+      </button>
+      <button className={styles.nextButton} onClick={goToNext}>
+        <FontAwesomeIcon icon={faChevronRight} />
+      </button>
     </div>
   );
 };
