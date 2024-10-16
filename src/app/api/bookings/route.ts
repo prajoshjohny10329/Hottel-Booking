@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import connectMongo from '@/lib/db';
+import {connectMongo} from '@/lib/db';
 import Booking from '@/models/Booking';
 
 export async function POST(request: Request) {
