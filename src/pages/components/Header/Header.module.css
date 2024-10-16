@@ -1,0 +1,90 @@
+/* Header.module.css */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #000000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav {
+    text-align: center;
+  }
+  
+  .nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav ul li {
+    margin: 0 15px;
+    position: relative;
+  }
+  
+  .nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .services {
+    cursor: pointer;
+  }
+  
+  .subServices {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+  }
+  
+  .subServices ul {
+    list-style: none;
+    margin: 0;
+  }
+  .subMenu{
+    display: flex;
+    flex-direction: column;
+  }
+  .subMenu li {
+  }
+
+  
+
+
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .nav ul {
+      flex-direction: column;
+      display: none; /* Initially hide on mobile */
+    }
+  
+    .nav ul li {
+      margin: 10px 0;
+    }
+  
+    .header:hover .nav ul {
+      display: flex; /* Show when header is hovered */
+    }
+  }
+  

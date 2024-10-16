@@ -1,6 +1,7 @@
 // src/app/components/LandingPage.tsx
 import React, { useState, useEffect } from 'react';
-import HeroSlider from './HeroSlider/HeroSlider';
+import HeroSlider from '../HeroSlider/HeroSlider';
+import Header from '../Header/Header';
 
 const LandingPage: React.FC = () => {
 
@@ -8,9 +9,7 @@ const LandingPage: React.FC = () => {
     <div>
       
       {/* Header */}
-      <header className="bg-green-600 text-white p-4">
-        <h1 className="text-3xl font-bold">Hotel Booking</h1>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <HeroSlider />
