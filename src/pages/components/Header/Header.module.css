@@ -59,16 +59,13 @@
   
   .subServices ul {
     list-style: none;
+    padding: 10px;
     margin: 0;
   }
   .subMenu{
     display: flex;
     flex-direction: column;
   }
-  .subMenu li {
-  }
-
-  
 
 
   

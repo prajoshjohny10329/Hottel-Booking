@@ -2,6 +2,7 @@
 import React from 'react';
 import LandingPage from './components/Landing/LandingPage';
 
+
 const HomePage: React.FC = () => {
   return (
     <div>
