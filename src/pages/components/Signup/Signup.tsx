@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/material.css';
 import styles from './Signup.module.css';
+
 
 export default function Signup({ setUser }: { setUser: (user: any) => void }) {
   const [email, setEmail] = useState('');
@@ -46,13 +49,16 @@ export default function Signup({ setUser }: { setUser: (user: any) => void }) {
             className={styles.input}
             required
           />
-          <input
-            type="text"
-            placeholder="Phone"
+          <PhoneInput
+            country={'us'}  // Default country for the phone input
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            className={styles.input}
-            required
+            onChange={(phone) => setPhone(phone)}
+            inputClass={styles.input}
+            containerClass={styles.phoneInput}
+            inputStyle={{
+              width: '100%',
+              padding: '12px',
+            }}
           />
           <input
             type="email"

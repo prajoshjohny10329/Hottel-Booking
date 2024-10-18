@@ -76,3 +76,15 @@
     text-decoration: underline;
   }
   
+  /* for country list  */
+  /* In Signup.module.css */
+/* Increasing specificity by targeting parent classes */
+.react-tel-input .country-list .country .country-name {
+  color: black !important;
+}
+
+/* On hover */
+.react-tel-input .country-list .country:hover .country-name {
+  color: black !important;
+}
+
