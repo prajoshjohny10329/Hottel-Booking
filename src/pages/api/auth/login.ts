@@ -21,14 +21,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (!user) {
     return res.status(400).json({ message: 'Invalid email credentials' });
   }
-  console.log(user);
-  
 
   // Compare password
-  // const isMatch = await bcrypt.compare(password, user.password);
-  // if (!isMatch) {
-  //   return res.status(400).json({ message: 'Invalid credentials' });
-  // }
+  const isMatch = await bcrypt.compare(password, user.password);
+  if (!isMatch) {
+    return res.status(400).json({ message: 'Invalid credentials' });
+  }
 
   // Create JWT token
   const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET as string, { expiresIn: '1h' });
@@ -46,7 +44,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   //     path: '/',
   //   })
   // );
-  console.log('befro return');
-  
-  return res.status(200).json({ message: 'Login successful' });
+  res.status(201).json({ user: { email: user.email, name: user.name } });
 }

@@ -21,12 +21,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (existingUser) {
     return res.status(400).json({ message: 'User already exists' });
   }
-  console.log('not ext');
   
   const hashedPassword = await bcrypt.hash(password, 10);
   console.log(hashedPassword);
-  
-
 
   // Create new user
   const user = new User({ 
@@ -38,6 +35,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   await user.save();
   console.log(user);
   
-
-  // res.status(201).json({ user: { email: newUser.email, name: newUser.name } });
+    console.log("before response");
+    
+  res.status(201).json({ user: { email: user.email, name: user.name } });
 }

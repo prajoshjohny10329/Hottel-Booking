@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import styles from './Login.module.css';
 
-const Login: React.FC = () => {
+// const Login: React.FC = ({ setUser }: { setUser: (user: any) => void }) => {
+ const Login = ({ setUser }: { setUser: (user: any) => void }) => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string>('');
@@ -23,16 +24,12 @@ const Login: React.FC = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
       });
-      console.log('response came');
-      
 
       const data = await res.json();
 
-      
-
       if (res.ok) {
-        
-        // router.push('/dashboard');
+        setUser(data.user);
+        router.push('/landing');
         
       } else {
         setError(data.message || 'Login failed');

@@ -12,10 +12,9 @@ export default function Signup({ setUser }: { setUser: (user: any) => void }) {
   const [phone, setPhone] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
+  
 
   const handleSubmit = async (e: React.FormEvent) => {
-    console.log('log handel sub');
-    
     e.preventDefault();
     setError('');
 
@@ -30,7 +29,7 @@ export default function Signup({ setUser }: { setUser: (user: any) => void }) {
     if (res.ok) {
       // Assuming the API returns the user object on successful signup
       setUser(data.user); // Set the user in global state
-      router.push('/dashboard'); // Navigate to dashboard after signup
+      router.push('/landing'); // Navigate to dashboard after signup
     } else {
       setError(data.message);
     }
