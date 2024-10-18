@@ -10,4 +10,4 @@ const RoomSchema = new mongoose.Schema({
   numberOf: { type: Number, required: true },
 });
 
-export default mongoose.models.Room || mongoose.model('Rooms', RoomSchema);
+export default mongoose.models.Room || mongoose.model('rooms', RoomSchema);
